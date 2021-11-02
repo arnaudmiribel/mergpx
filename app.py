@@ -61,29 +61,29 @@ if gpx_files:
             unsafe_allow_html=True,
         )
 
-        wonderland = Converter(input_file="merged.gpx").gpx_to_dataframe()
-        mapbox_access_token = open(".mapbox_token").read()
-        px.set_mapbox_access_token(mapbox_access_token)
+        #wonderland = Converter(input_file="merged.gpx").gpx_to_dataframe()
+        #mapbox_access_token = open(".mapbox_token").read()
+        #px.set_mapbox_access_token(mapbox_access_token)
 
-        fig = px.scatter_mapbox(
-            wonderland,
-            lat="latitude",
-            lon="longitude",
-            hover_data={
-                "latitude": ":.2f",
-                "longitude": ":.2f",
-            },
-            zoom=11,
-            height=500,
-        )
+        #fig = px.scatter_mapbox(
+        #     wonderland,
+        #     lat="latitude",
+        #     lon="longitude",
+        #     hover_data={
+        #         "latitude": ":.2f",
+        #         "longitude": ":.2f",
+        #     },
+        #     zoom=11,
+        #     height=500,
+        # )
 
-        fig.update_layout(
-            margin=dict(r=0, t=0, l=0, b=0),
-            mapbox=dict(
-                accesstoken=mapbox_access_token,
-                center=go.layout.mapbox.Center(lat=44.8638281, lon=-0.656353),
-                zoom=5,
-            ),
-        )
+        # fig.update_layout(
+        #     margin=dict(r=0, t=0, l=0, b=0),
+        #     mapbox=dict(
+        #         accesstoken=mapbox_access_token,
+        #         center=go.layout.mapbox.Center(lat=44.8638281, lon=-0.656353),
+        #         zoom=5,
+        #     ),
+        # )
 
-        st.plotly_chart(fig)
+        # st.plotly_chart(fig)
